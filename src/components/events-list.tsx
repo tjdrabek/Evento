@@ -7,7 +7,7 @@ type EventsListProps = {
 };
 
 export default async function EventsList({ city }: EventsListProps) {
-  const respnse = await fetch(
+  const response = await fetch(
     `https://bytegrad.com/course-assets/projects/evento/api/events?city=${city}`,
     {
       next: {
@@ -15,7 +15,7 @@ export default async function EventsList({ city }: EventsListProps) {
       },
     }
   );
-  const events: EventoEvent[] = await respnse.json();
+  const events: EventoEvent[] = await response.json();
 
   return (
     <section className="max-w-[1100px] flex flex-wrap gap-10 justify-center px-[20px]">
