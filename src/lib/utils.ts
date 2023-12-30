@@ -18,7 +18,6 @@ export function capitalize(string: string) {
 }
 
 export async function getEvents(city: string, page = 1) {
-  prisma.eventoEvent.findMany();
   const events = await prisma.eventoEvent.findMany({
     where: {
       city: city === "all" ? undefined : capitalize(city),
